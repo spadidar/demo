@@ -1,0 +1,34 @@
+%table
+  %tr
+    %th
+ 
+    %th
+      Application Name
+    %th
+      Application Platform
+    %th
+      Version
+    %th
+      App Status
+    %th
+      Request Path
+    %th
+      Bulk Request?
+  - @applications.each do |lsl|
+    %tr
+      %td
+        %a{ :href => "/applications/#{lsl.application_id}/report.json" }
+          = lsl.application_id
+      %td
+        %a{ :href => "/applications/#{lsl.application_id}/report.json" }
+          = lsl.package
+      %td
+        = lsl.platform
+      %td
+        = lsl.version
+      %td
+        = lsl.app_status
+      %td
+        = lsl.request_path
+      %td
+        = lsl.bulk_request
