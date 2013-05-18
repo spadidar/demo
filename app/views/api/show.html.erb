@@ -1,28 +1,21 @@
-<h1>Listing posts</h1>
- 
 <table>
   <tr>
     <th>Name</th>
-    <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Location</th>
+    <th>Orientation</th>
+    <th>Running</th>
+    <th>shots</th>
   </tr>
  
-<% @posts.each do |post| %>
+<% @officers.each do |o| %>
   <tr>
-    <td><%= post.name %></td>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?',
-                                     :method => :delete %></td>
+    <td><%= o.name %></td>
+    <td><%= o.location %></td>
+    <td><%= o.running %></td>
+    <td><%= link_to 'Edit', "" %></td>
+    <td><%= o.shots %></td>
   </tr>
 <% end %>
 </table>
  
 <br />
- 
-<%= link_to 'New post', new_post_path %>
