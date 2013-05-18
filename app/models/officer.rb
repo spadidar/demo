@@ -12,11 +12,11 @@ class Officer
 
   def self.store json
     o = Officer.find_or_create_by(guid: json["guid"])
-    o.name = json["name"]
-    o.location = json["location"]
-    o.orientation = json["orientation"]
-    o.running = json["running"]
-    o.shots = json["shots"]
+    o.name = json["name"] if json.has_key?("name")
+    o.location = json["location"] if json.has_key?("location")
+    o.orientation = json["orientation"] if json.has_key?("orientation")
+    o.running = json["running"] if json.has_key?("running")
+    o.shots = json["shots"] if json.has_key?("shots")
     o.save
     return o
   end
