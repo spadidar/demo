@@ -24,7 +24,7 @@
   <tr style="font-size:14pt;">
     <td><%= o.name %></td>
     <td><%= o.location %></td>
-    <td><iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=<%= o.location%>&amp;ie=UTF8&amp;t=m&amp;z=14&amp;ll=<%= o.location%>&amp;output=embed"></iframe></td>    
+    <td><img src="http://maps.googleapis.com/maps/api/staticmap?size=425x350&sensor=false&markers=icon:http://statics.appthority.com.s3.amazonaws.com/green.png%7C<%= o.location%>"</iframe></td> 
     <td><%= o.orientation %></td>
     <td><%= o.running %></td>
     <td><%= o.shots %></td>
