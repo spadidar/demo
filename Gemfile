@@ -2,8 +2,10 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 gem 'faraday'
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'less'
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+gem "twitter-bootstrap-rails"
 
 gem 'sqlite3'
 gem 'mongoid'
@@ -36,5 +38,3 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
