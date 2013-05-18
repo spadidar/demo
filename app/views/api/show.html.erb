@@ -1,7 +1,7 @@
-<table>
-<tr>
+<table width=100%>
+<tr border="1" bgcolor="red">
 <td rowspan="1"><img src="/officerup_logo.png"  width="50" height="50"></td>
-<td><h1>Officer Up</h1></td>
+<td ><font color="white"><h1>Officer Up</h1></font></td>
 </tr>
 </table>
 
@@ -12,26 +12,25 @@
 <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <table class="table table-striped table-bordered table-condensed">
-  <tr>
+  <tr style="font-size:16pt;">
     <th>Name</th>
     <th>Location</th>
-    <th>Orientation</th>
+    <th>Map</th>
     <th>Running</th>
     <th>shots</th>
   </tr>
  
 <% @officers.each do |o| %>
-  <tr>
+  <tr style="font-size:14pt;">
     <td><%= o.name %></td>
     <td><%= o.location %></td>
-    <td>"<iframe width="425" height="350" frameborder="0"
+    <td><iframe width="425" height="350" frameborder="0"
     scrolling="no" marginheight="0" marginwidth="0"
     src="https://maps.google.com/maps?q=<%= o.location
     %>&amp;t=h&amp;ie=UTF8&amp;z=14&amp;ll=<%= o.location
     %>&amp;output=embed"></iframe><br/><small><a href="https://maps.google.com/maps?q=<%= o.location
     %>&amp;t=h&amp;ie=UTF8&amp;z=14&amp;ll=<%= o.location
-    %>&amp;source=embed" style="color:#0000FF;text-align:left">View
-    Larger Map</a></small>"></td>
+    %>&amp;source=embed" style="color:#0000FF;text-align:left"></small></td>
     <td><%= o.orientation %></td>
     <td><%= o.running %></td>
     <td><%= o.shots %></td>
