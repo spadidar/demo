@@ -11,7 +11,7 @@ class Officer
   field :shots,         :type => String, :default => ""
 
   def self.store json
-    o = Officer.find_or_create_by(name: json["guid"])
+    o = Officer.find_or_create_by(guid: json["guid"])
     o.name = json["name"]
     o.location = json["location"]
     o.orientation = json["orientation"]
