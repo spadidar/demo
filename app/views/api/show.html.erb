@@ -14,16 +14,21 @@
 <table class="table table-striped table-bordered table-condensed">
   <tr style="font-size:16pt;">
     <th>Name</th>
-    <th>Location</th>
+    <th>Longtitude</th>
+    <th>Latitude</th>
+    <th>Address</th>
     <th>Map</th>
+    <th>Orientation</th>
     <th>Running</th>
-    <th>shots</th>
+    <th>Shots</th>
   </tr>
  
 <% @officers.each do |o| %>
   <tr style="font-size:14pt;">
     <td><%= o.name %></td>
-    <td><%= o.location %></td>
+    <td><%= o.longt %></td>
+    <td><%= o.lat %></td>
+    <td><%= o.address %></td>
     <td><img src="http://maps.googleapis.com/maps/api/staticmap?size=425x350&sensor=false&markers=icon:http://statics.appthority.com.s3.amazonaws.com/green.png%7C<%= o.location%>"</iframe></td> 
     <td><%= o.orientation %></td>
     <td><%= o.running %></td>

@@ -1,3 +1,4 @@
+require 'open-uri'
 class Officer
 
   include Mongoid::Document
@@ -19,6 +20,37 @@ class Officer
     o.shots = json["shots"] if json.has_key?("shots")
     o.save
     return o
+  end
+
+  def address
+    url = URI.parse "http://maps.google.com/maps/api/geocode/json?latlng=#{location}&sensor=false"
+    response = ""
+    open(url) do |http|
+      response = http.read
+    end
+    json = JSON.parse response
+    Kernel.p json
+    results = json["results"]
+    
+    if results.size >= 1
+      results.first["formatted_address"]
+    else
+      ""
+    end
+  end
+  
+  def longt
+    return "" if location.blank?
+    if location.split(",").size > 1
+      return location.split(",").first
+    end
+  end
+  
+  def lat
+    return "" if location.blank?
+    if location.split(",").size > 1
+      return location.split(",").last
+    end
   end
 
 end
