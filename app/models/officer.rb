@@ -25,6 +25,7 @@ class Officer
   end
 
   def get_address
+    return address unless address.blank?
     url = URI.parse "http://maps.google.com/maps/api/geocode/json?latlng=#{location}&sensor=false"
     response = ""
     open(url) do |http|
