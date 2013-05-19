@@ -29,7 +29,6 @@ class Officer
       response = http.read
     end
     json = JSON.parse response
-    Kernel.p json
     results = json["results"]
     
     if results.size >= 1
