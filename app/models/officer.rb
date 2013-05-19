@@ -7,6 +7,7 @@ class Officer
   field :guid,         :type => String,:default => ""
   field :name,         :type => String,:default => ""
   field :location,  :type => String,:default => ""
+  field :address,  :type => String,:default => ""
   field :orientation,        :type => String,:default => ""
   field :running,         :type => String,:default => ""
   field :shots,         :type => String, :default => ""
@@ -18,11 +19,12 @@ class Officer
     o.orientation = json["orientation"] if json.has_key?("orientation")
     o.running = json["running"] if json.has_key?("running")
     o.shots = json["shots"] if json.has_key?("shots")
+    o.address = o.get_address if json.has_key?("location")
     o.save
     return o
   end
 
-  def address
+  def get_address
     url = URI.parse "http://maps.google.com/maps/api/geocode/json?latlng=#{location}&sensor=false"
     response = ""
     open(url) do |http|
