@@ -54,4 +54,19 @@ class Officer
     end
   end
 
+  def orit_icon
+    case orientation
+    when "Flat"
+      "/flat.png"
+    when "Vertical"
+      "/up.png"
+    when "Down"
+      "/down.png"
+    when "Side"
+      "/side.png"
+    else
+      "/up.png"
+    end
+  end
+
 end

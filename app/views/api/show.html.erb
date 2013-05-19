@@ -21,8 +21,6 @@
     <th>Address</th>
     <th>Map</th>
     <th>Orientation</th>
-    <th>Running</th>
-    <th>Shots</th>
   </tr>
  
 <% @officers.each do |o| %>
@@ -32,9 +30,7 @@
     <td><%= o.lat %></td>
     <td><%= o.address %></td>
     <td  id="<%=o.guid%>" class="map_<%=o.guid%>"><img src="http://maps.googleapis.com/maps/api/staticmap?size=425x350&sensor=false&markers=icon:http://statics.appthority.com.s3.amazonaws.com/green.png%7C<%= o.location%>"</iframe></td> 
-    <td><%= o.orientation %></td>
-    <td><%= o.running %></td>
-    <td><%= o.shots %></td>
+    <td><img src="<%= o.orit_icon %>"</td>
   </tr>
 <% end %>
 </table>
